@@ -25,3 +25,30 @@ void sumEvenNumbers(){
   }
   print('The sum of all even numbers is $sum');
 }
+
+// 📝 Day 2 Tasks Breakdown
+// Task 1 – Celsius → Fahrenheit Converter
+
+// Store a temperature in Celsius in a variable.
+
+// Convert it to Fahrenheit using (C * 9 / 5) + 32.
+
+// Print: "30°C is 86°F".
+
+// Task 2 – Multiplication Table
+
+// Store a number in a variable.
+
+// Use a for loop from 1 to 12.
+
+// Print: "5 x 1 = 5", "5 x 2 = 10", etc.
+
+// Task 3 – Sum of Even Numbers
+
+// Write a function sumEvenNumbers():
+
+// Loops from 1 to 100.
+
+// Adds only even numbers to a sum variable.
+
+// Returns the total.
