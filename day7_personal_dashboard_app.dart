@@ -9,7 +9,15 @@ void main(){
     profession: 'Pharmacist'
   );
 
+  Dashboard user2 = Dashboard(
+    id:2,
+    name: 'James Ogbole',
+    age: 27,
+    profession: 'Architect'
+  );
+
   print(user1);
+  print(user2);
 }
 
 class Dashboard{
