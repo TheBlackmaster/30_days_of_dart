@@ -2,14 +2,14 @@
 
 
 void main(){
-  Dashboard dashboard = Dashboard(
+  Dashboard user1 = Dashboard(
     id:1,
     name: 'Moses Adang',
     age: 26,
     profession: 'Pharmacist'
   );
 
-  print(dashboard);
+  print(user1);
 }
 
 class Dashboard{
