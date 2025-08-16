@@ -2,7 +2,7 @@
 
 
 void main(){
-  Dashboard dashboard = Dashboard.profileCard(
+  Dashboard dashboard = Dashboard(
     id:1,
     name: 'Moses Adang',
     age: 26,
@@ -13,16 +13,26 @@ void main(){
 }
 
 class Dashboard{
-  int id;
-  String name;
-  int age;
-  String profession;
+  final int id;
+  final String name;
+  final int age;
+  final String profession;
   
-  Dashboard(this.id, this.name, this.age, this.profession);
+  Dashboard({
+    required this.id,
+    required this.name,
+    required this.age,
+    required this.profession
+    });
   
-    static profileCard({required int id, required String name, required int age, required String profession}){
-    return 'The user\'s id no. is $id. The name is $name and is $age by age. User is a $profession';
+    String profileCard(){
+    return 'The user\'s id no. is $id. The name is $name and is $age by age. User is a $profession.';
   }
+
+  @override
+String toString() {
+  return profileCard(); // Reuses the instance method
+}
 }
 
 // Problems in Your Code:
