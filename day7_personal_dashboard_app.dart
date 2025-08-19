@@ -1,38 +1,50 @@
-void main(){
-var user1 = Dashboard(id:1);
-print(user1);
+import 'dart:math';
 
-// final user1area = user1.multiplication(length:2, breadth: 4);
-// print(user1area);
+void main() {
+  var user1 = Dashboard(id: 1, name: 'Moses Adang', profession: 'Pharmacist');
+  var user2 = Dashboard(id: 2, name: 'James Ogbole', profession: 'Architect');
+  print(user1);
+  print(user2);
 
-var user1mult = user1.multiplication(num: 123);
-print(user1mult);
+  user1.multiplication(num: 28);
+  user2.multiplication(num: 3456);
+
+  user1.randomJoke();
+  user2.randomJoke();
 }
 
-class Dashboard{
+class Dashboard {
   int id;
-  Dashboard({this.id = 0});
+  String name;
+  String profession;
+  Dashboard({required this.id, required this.name, required this.profession});
 
-  // int multiplication({required int length,required int breadth}){
-
-  //   int area = length * breadth;
-  //   return area;
-  // }
-
-  String multiplication({required int num}){
-    int timesValue = 0;
+  void multiplication({required int num}){
+    print('I am user $id and below is my multiplication table:');
     for(int i = 1; i <= 12; i++){
       print('$num * $i = ${num * i}');
-      timesValue = num * i;
     }
-
-    return '$timesValue';
   }
 
+  // Random Joke Generator
+  void randomJoke(){
+    List jokes = [
+      'Knock knock? Who\'s there? Hookup!!!',
+      'Guess what!!! What? I said what. LMAO',
+      'I can\'t crack jokes. Jokes are not eggs'
+    ];
 
+      final random = Random();
+      final randomIndex = random.nextInt(jokes.length);
+      final selectedJoke = jokes[randomIndex];
+
+      print('I am use $id and the random joke i picked is :$selectedJoke');
+
+    
+  }
 
   @override
-  String toString(){
-    return 'Hi $id';
+  String toString() {
+    return 'Hi, my user id is $id and my name is $name. I am a $profession.';
   }
 }
