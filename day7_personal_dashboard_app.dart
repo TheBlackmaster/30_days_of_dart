@@ -1,59 +1,38 @@
-// Shows your profile card, a multiplication table, and random joke from a list
-
-
 void main(){
-  Dashboard user1 = Dashboard(
-    id:1,
-    name: 'Moses Adang',
-    age: 26,
-    profession: 'Pharmacist'
-  );
+var user1 = Dashboard(id:1);
+print(user1);
 
-  Dashboard user2 = Dashboard(
-    id:2,
-    name: 'James Ogbole',
-    age: 27,
-    profession: 'Architect'
-  );
+// final user1area = user1.multiplication(length:2, breadth: 4);
+// print(user1area);
 
-  print(user1);
-  print(user2);
+var user1mult = user1.multiplication(num: 123);
+print(user1mult);
 }
 
 class Dashboard{
-  final int id;
-  final String name;
-  final int age;
-  final String profession;
-  
-  Dashboard({
-    required this.id,
-    required this.name,
-    required this.age,
-    required this.profession
-    });
-  
-    String profileCard(){
-    return 'The user\'s id no. is $id. The name is $name and is $age by age. User is a $profession.';
+  int id;
+  Dashboard({this.id = 0});
+
+  // int multiplication({required int length,required int breadth}){
+
+  //   int area = length * breadth;
+  //   return area;
+  // }
+
+  String multiplication({required int num}){
+    int timesValue = 0;
+    for(int i = 1; i <= 12; i++){
+      print('$num * $i = ${num * i}');
+      timesValue = num * i;
+    }
+
+    return '$timesValue';
   }
 
+
+
   @override
-String toString() {
-  return profileCard(); // Reuses the instance method
+  String toString(){
+    return 'Hi $id';
+  }
 }
-}
-
-// Problems in Your Code:
-// Constructor vs Static Method Confusion
-
-// You're trying to use Dashboard.profileCard() as a constructor, but you've defined it as a static method that returns a String
-
-// When you do Dashboard dashboard = Dashboard.profileCard(...), it expects to return a Dashboard object, but your method returns a String
-
-// Type Mismatch
-
-// Your static method returns a String, but you're trying to assign it to a Dashboard variable
-
-// Missing toString()
-
-// Even if you fix the above, you won't get the formatted string when printing unless you override toString()
