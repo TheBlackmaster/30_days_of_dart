@@ -1,11 +1,13 @@
 import 'dart:math';
 
 void main() {
+  // User Profile
   var user1 = Dashboard(id: 1, name: 'Moses Adang', profession: 'Pharmacist');
   var user2 = Dashboard(id: 2, name: 'James Ogbole', profession: 'Architect');
   print(user1);
   print(user2);
 
+  // multiplication table
   user1.multiplication(num: 28);
   user2.multiplication(num: 3456);
 
